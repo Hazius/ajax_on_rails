@@ -12,12 +12,12 @@
   <% end %>
   
   <div class="field">    
-    <%= f.label :name, "Количество" %>
+    <%= f.label :quantity, "Количество" %>
     <span id="slider_min_value"></span>
     -
     <span id="slider_max_value"></span>
     <div id="slider-range-min"></div>    
-    <%= f.text_field :quantity, id: "amount" %>
+    <%= f.text_field :quantity, readonly: true , id: "amount" %>
   </div>
 
   <div class="field">
@@ -27,7 +27,7 @@
 
   <div class="field">
     <%= f.label :phone, "Телефон" %>
-    <%= f.text_field :phone %>
+    +7 <%= f.text_field :phone %>
   </div>
 
   <div class="field">
