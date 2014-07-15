@@ -1,8 +1,8 @@
-<%= form_for(@order) do |f| %>
+<%= form_for(@order, remote: true) do |f| %>
+
   <% if @order.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@order.errors.count, "error") %> prohibited this order from being saved:</h2>
-
       <ul>
       <% @order.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
@@ -10,24 +10,38 @@
       </ul>
     </div>
   <% end %>
+  
+  <div class="field">    
+    <%= f.label :name, "Количество" %>
+    <span id="slider_min_value"></span>
+    -
+    <span id="slider_max_value"></span>
+    <div id="slider-range-min"></div>    
+    <%= f.text_field :quantity, id: "amount" %>
+  </div>
 
   <div class="field">
     <%= f.label :name, "Ваше имя" %>
     <%= f.text_field :name %>
   </div>
+
   <div class="field">
     <%= f.label :phone, "Телефон" %>
     <%= f.text_field :phone %>
   </div>
+
   <div class="field">
     <%= f.label :email  %>
     <%= f.text_field :email %>
-  </div>
+  </div>  
+
   <div class="field">
     <%= f.label :address, "Адрес" %>
     <%= f.text_field :address %>
   </div>
+
   <div class="actions">
     <%= f.submit "Отправить" %>
   </div>
+
 <% end %>
