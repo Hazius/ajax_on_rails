@@ -1,0 +1,10 @@
+Поступил новый заказ.<br /><br />
+
+<b>Данные о заказе:</b><br />
+Идентификационный номер: <%= @order.id %>.<br />
+Имя: <%= @order.name %>.<br />
+Количество: <%= @order.quantity %>.<br />
+Адрес: <%= @order.address %>.<br />
+Контактный телефон: +7 <%= @order.phone %>.<br />
+Дата заказа: <%= @order.created_at.strftime("%d.%m.%y") %>.<br />
+
