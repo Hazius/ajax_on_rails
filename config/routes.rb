@@ -1,7 +1,6 @@
 TestForRaiz::Application.routes.draw do
  
   resources :managers
-
   resources :orders
 
   root 'welcome#index'

@@ -1,12 +1,15 @@
-<h1>Listing orders</h1>
+<h1>Все созданные заявки:</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Phone</th>
+      <th>Имя</th>
+      <th>Телефон</th>
       <th>Email</th>
-      <th>Address</th>
+      <th>Адрес</th>
+      <th>Количество</th>
+      <th>Статус</th>
+      <th>Статус(название)</th>
       <th></th>
       <th></th>
       <th></th>
@@ -20,9 +23,13 @@
         <td><%= order.phone %></td>
         <td><%= order.email %></td>
         <td><%= order.address %></td>
-        <td><%= link_to 'Show', order %></td>
-        <td><%= link_to 'Edit', edit_order_path(order) %></td>
-        <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= order.quantity %></td>
+        <td><%= order.status %></td>
+        <td><%= order.status_name() %></td>
+        <!--<td><%= link_to 'Показать', order %></td>-->
+        <!--<td><%= link_to 'Редактировать', edit_order_path(order) %></td>-->
+        <td><%= link_to 'Закрыть', order_path(order, close_order: true), method: :patch, data: { confirm: "Перевести заявку в статус 'закрыта'?" } %></td>   
+        <td><%= link_to 'Удалить', order, method: :delete, data: { confirm: "Удалить заявку?" } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +37,4 @@
 
 <br>
 
-<%= link_to 'New Order', new_order_path %>
+<%= link_to 'Новый заказ', new_order_path %>

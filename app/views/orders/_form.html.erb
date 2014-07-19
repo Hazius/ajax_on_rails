@@ -1,3 +1,4 @@
+<div id="wrapper_form_for_order">
 <%= form_for(@order, remote: true) do |f| %>
 
     <% if @order.errors.any? %>
@@ -13,10 +14,10 @@
   
     <div class="field">    
         <%= f.label :quantity, "Количество" %>
-        <span id="slider_min_value"></span>
-        -
-        <span id="slider_max_value"></span>
-        <div id="slider-range-min"></div>    
+        <div id="slider_min_value"></div>       
+        <div id="slider_max_value"></div>
+        <div class="clear"></div>
+        <div id="slider-range-min"></div>
         <%= f.text_field :quantity, readonly: true , id: "amount" %>
     </div>
 
@@ -49,3 +50,4 @@
     </div>
 
 <% end %>
+</div>

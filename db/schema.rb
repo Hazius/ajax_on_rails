@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140719121754) do
+ActiveRecord::Schema.define(version: 20140719183352) do
 
   create_table "managers", force: true do |t|
     t.string   "email"
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20140719121754) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "quantity"
+    t.integer  "status",     default: 0
   end
 
 end

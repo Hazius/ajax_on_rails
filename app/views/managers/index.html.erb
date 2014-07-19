@@ -1,4 +1,4 @@
-<h1>Listing managers</h1>
+<h1>Список менеджеров</h1>
 
 <table>
   <thead>
@@ -14,9 +14,9 @@
     <% @managers.each do |manager| %>
       <tr>
         <td><%= manager.email %></td>
-        <td><%= link_to 'Show', manager %></td>
-        <td><%= link_to 'Edit', edit_manager_path(manager) %></td>
-        <td><%= link_to 'Destroy', manager, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Показать', manager %></td>
+        <td><%= link_to 'Редактировать', edit_manager_path(manager) %></td>
+        <td><%= link_to 'Удалить', manager, method: :delete, data: { confirm: 'Вы уверены?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -24,4 +24,4 @@
 
 <br>
 
-<%= link_to 'New Manager', new_manager_path %>
+<%= link_to 'Новый менеджер', new_manager_path %>

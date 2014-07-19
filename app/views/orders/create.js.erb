@@ -1,5 +1,6 @@
-$( "#dialog" ).css("display","block");
-$( "#dialog" ).dialog({
+<% if @success %>
+  $( "#dialog" ).css("display","block");
+  $( "#dialog" ).dialog({
       autoOpen: true,
       resizable: false,
       width:400,
@@ -18,3 +19,6 @@ $( "#dialog" ).dialog({
         duration: 1000
       }
     });
+<% else %>
+  $("#error_explanation").html(<%= escape_javascript render('new') %>)
+<% end %>

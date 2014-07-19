@@ -1,5 +1,10 @@
 class Order < ActiveRecord::Base
 
+	STATUSES = {
+		0 => "Новая",
+		1 => "Закрыта"
+	}
+
 	before_save { self.email = email.downcase }
 
 	validates :name, presence: { message: "- Заполните поле 'Ваше имя'" }
@@ -15,5 +20,9 @@ class Order < ActiveRecord::Base
 	validates :phone, length: { is: 10,
 		massage: "- Длина телефона должна быть равна 10 цифрам." },
 		allow_blank: true
+
+	def status_name
+		STATUSES[self.status]
+	end
 
 end
