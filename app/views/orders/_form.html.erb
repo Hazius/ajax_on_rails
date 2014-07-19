@@ -41,7 +41,11 @@
     </table>
 
     <div class="actions">
-        <%= f.submit "Отправить" %>
+        <%= f.submit "Отправить", id: "bt_make_the_order" %>
+    </div>
+    
+    <div id="waiting" style="display: none;">
+        <%= image_tag("waiting.gif", size: "70x70") %>
     </div>
 
 <% end %>

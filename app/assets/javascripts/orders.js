@@ -17,3 +17,9 @@ $(document).ready(function() {
         $( "#slider_max_value" ).html( gv_max.toString() );
     });
 });
+
+$(document).ready(function() {
+    $("#bt_make_the_order").click(function () {
+      $("#waiting").css("display", "block");
+    });
+});
