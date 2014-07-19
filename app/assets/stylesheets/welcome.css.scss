@@ -1,3 +1,35 @@
 // Place all the styles related to the Welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@mixin link_for_all
+{
+    width: 150px;
+	height: 120px;
+	margin: 10px;
+	float: left;
+	padding-top: 30px;
+	line-height: 2;
+	font-size: 20px;
+	text-align: center;
+	color: #787878;
+	&:hover {
+		color: #FFFFFF;
+	}	
+}
+
+div#link_new_order {
+	@include link_for_all;
+	background-color: #00CC99;
+	&:hover {
+		background-color: #00CC66;
+	}
+}
+
+div.link_for_admin {
+	@include link_for_all;
+	background-color: #00CCFF;
+	&:hover {
+		background-color: #6666FF;
+	}
+}

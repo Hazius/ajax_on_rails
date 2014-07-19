@@ -1,0 +1,20 @@
+$( "#dialog" ).css("display","block");
+$( "#dialog" ).dialog({
+      autoOpen: true,
+      resizable: false,
+      width:400,
+      modal: true,
+      buttons: {        
+        "Закрыть": function() {
+          $( this ).dialog( "close" );
+        }
+      },
+      show: {
+        effect: "explode",
+        duration: 1000
+      },
+      hide: {
+        effect: "explode",
+        duration: 1000
+      }
+    });

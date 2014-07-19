@@ -1,47 +1,51 @@
-<%= form_for(@order) do |f| %>
+<%= form_for(@order, remote: true) do |f| %>
 
-  <% if @order.errors.any? %>
-    <div id="error_explanation">
-      <h2>Найдено ошибок: <%= @order.errors.count %></h2>
-      <ul>
-      <% @order.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+    <% if @order.errors.any? %>
+        <div id="error_explanation">
+            <h2>Найдено ошибок: <%= @order.errors.count %></h2>
+            <ul>
+                <% @order.errors.full_messages.each do |msg| %>
+                    <li><%= msg %></li>
+                <% end %>
+            </ul>
+        </div>
+    <% end %>
   
-  <div class="field">    
-    <%= f.label :quantity, "Количество" %>
-    <span id="slider_min_value"></span>
-    -
-    <span id="slider_max_value"></span>
-    <div id="slider-range-min"></div>    
-    <%= f.text_field :quantity, readonly: true , id: "amount" %>
-  </div>
+    <div class="field">    
+        <%= f.label :quantity, "Количество" %>
+        <span id="slider_min_value"></span>
+        -
+        <span id="slider_max_value"></span>
+        <div id="slider-range-min"></div>    
+        <%= f.text_field :quantity, readonly: true , id: "amount" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :name, "Ваше имя" %>
-    <%= f.text_field :name %>
-  </div>
+    <table>
 
-  <div class="field">
-    <%= f.label :phone, "Телефон" %>
-    +7 <%= f.text_field :phone %>
-  </div>
+        <tr>
+            <td><%= f.label :name, "Ваше имя:" %></td>
+            <td><%= f.text_field :name %></td>
+        </tr>
 
-  <div class="field">
-    <%= f.label :email  %>
-    <%= f.text_field :email %>
-  </div>  
+        <tr>
+            <td><%= f.label :phone, "Телефон: +7" %></td>
+            <td><%= f.text_field :phone %></td>
+        </tr>
 
-  <div class="field">
-    <%= f.label :address, "Адрес" %>
-    <%= f.text_field :address %>
-  </div>
+        <tr>
+            <td><%= f.label :email, "Email:"  %></td>
+            <td><%= f.text_field :email %></td>
+        </tr> 
 
-  <div class="actions">
-    <%= f.submit "Отправить" %>
-  </div>
+        <tr>
+            <td><%= f.label :address, "Адрес:" %></td>
+            <td><%= f.text_field :address %></td>
+        </tr>
+
+    </table>
+
+    <div class="actions">
+        <%= f.submit "Отправить" %>
+    </div>
 
 <% end %>

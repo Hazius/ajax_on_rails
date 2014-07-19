@@ -1,5 +1,19 @@
-Добро пожаловать!<br /><br />
+<%= link_to new_order_url do %>
+	<div id="link_new_order">
+		Оформить заказ
+	</div>
+<% end %>
 
-<%= link_to "Оформить заказ", new_order_url %>
-<%= link_to "Управление заказами", orders_url %>
-<%= link_to "Менеджеры", managers_url %>
+<%= link_to orders_url do %>
+	<div class="link_for_admin">
+		Управление заказами
+	</div>
+<% end %>
+
+<%= link_to managers_url do %>
+	<div class="link_for_admin">
+		Ведение менеджеров
+	</div>
+<% end %>	
+
+<div class="clear"></div>

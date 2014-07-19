@@ -33,6 +33,7 @@ class OrdersController < ApplicationController
         end
         OrderMailer.send_email_for_user(@order).deliver
         format.html { redirect_to @order, notice: 'Order was successfully created.' }
+        format.js
         format.json { render action: 'show', status: :created, location: @order }
       else
         format.html { render action: 'new' }
