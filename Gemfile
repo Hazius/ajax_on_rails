@@ -21,7 +21,7 @@ group :production do
 end
 
 gem 'bootstrap-sass', '2.3.2.0'
-
+gem 'docx_templater'
 gem 'bcrypt-ruby', '3.1.2'
 gem 'json', '1.8.1'
 gem 'sass-rails', '4.0.1'

@@ -28,6 +28,9 @@ class OrdersController < ApplicationController
 
     respond_to do |format|
       if @order.save
+        Manager.all.each do |manager|
+          OrderMailer.send_email_for_manager(manager.email, @order).deliver
+        end
         OrderMailer.send_email_for_user(@order).deliver
         format.html { redirect_to @order, notice: 'Order was successfully created.' }
         format.json { render action: 'show', status: :created, location: @order }
