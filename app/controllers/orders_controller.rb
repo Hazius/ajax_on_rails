@@ -33,11 +33,11 @@ class OrdersController < ApplicationController
         end
         OrderMailer.send_email_for_user(@order).deliver
         format.html { redirect_to @order, notice: 'Order was successfully created.' }
-        format.js { @success = true }
+        format.js
         format.json { render action: 'show', status: :created, location: @order }
       else
         format.html { render action: 'new' }
-        format.js { @success = false }
+        format.js
         format.json { render json: @order.errors, status: :unprocessable_entity }
       end
     end
@@ -49,7 +49,10 @@ class OrdersController < ApplicationController
     respond_to do |format|
       if params[:close_order]
         @order.update_attribute("status", "1")
-        format.html { redirect_to orders_url }                
+        format.html { redirect_to orders_url }
+      elsif params[:new_order]
+        @order.update_attribute("status", "0")
+        format.html { redirect_to orders_url }                             
       elsif @order.update(order_params)
         format.html { redirect_to @order, notice: 'Order was successfully updated.' }
         format.json { head :no_content }

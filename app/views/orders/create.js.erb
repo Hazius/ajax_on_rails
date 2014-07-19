@@ -1,4 +1,7 @@
-<% if @success %>
+<% if @order.errors.any? %>
+  $("#errors_show").html("<%= escape_javascript render('errors') %>");
+<% else %>
+  $("#errors_show").html("");
   $( "#dialog" ).css("display","block");
   $( "#dialog" ).dialog({
       autoOpen: true,
@@ -19,6 +22,4 @@
         duration: 1000
       }
     });
-<% else %>
-  $("#error_explanation").html(<%= escape_javascript render('new') %>)
 <% end %>

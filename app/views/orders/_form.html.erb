@@ -1,16 +1,11 @@
 <div id="wrapper_form_for_order">
 <%= form_for(@order, remote: true) do |f| %>
 
+    <div id="errors_show"></div>
     <% if @order.errors.any? %>
-        <div id="error_explanation">
-            <h2>Найдено ошибок: <%= @order.errors.count %></h2>
-            <ul>
-                <% @order.errors.full_messages.each do |msg| %>
-                    <li><%= msg %></li>
-                <% end %>
-            </ul>
-        </div>
+        <%= render 'errors' %>     
     <% end %>
+
   
     <div class="field">    
         <%= f.label :quantity, "Количество" %>

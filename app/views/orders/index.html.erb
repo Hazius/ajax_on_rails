@@ -1,6 +1,7 @@
 <h1>Все созданные заявки:</h1>
 
-<table>
+<table class="table table-striped table-bordered table-condensed">
+
   <thead>
     <tr>
       <th>Имя</th>
@@ -28,7 +29,11 @@
         <td><%= order.status_name() %></td>
         <!--<td><%= link_to 'Показать', order %></td>-->
         <!--<td><%= link_to 'Редактировать', edit_order_path(order) %></td>-->
-        <td><%= link_to 'Закрыть', order_path(order, close_order: true), method: :patch, data: { confirm: "Перевести заявку в статус 'закрыта'?" } %></td>   
+        <% if order.status == 0 %>
+          <td><%= link_to 'Закрыть', order_path(order, close_order: true), method: :patch, data: { confirm: "Перевести заявку в статус 'закрыта'?" } %></td>
+        <% elsif order.status == 1 %>
+          <td><%= link_to 'Открыть', order_path(order, new_order: true), method: :patch, data: { confirm: "Вернуть заявку в статус 'новая'?" } %></td>  
+        <% end %>
         <td><%= link_to 'Удалить', order, method: :delete, data: { confirm: "Удалить заявку?" } %></td>
       </tr>
     <% end %>

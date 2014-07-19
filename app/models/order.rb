@@ -14,11 +14,11 @@ class Order < ActiveRecord::Base
 	validates :address, presence: { message: "- Заполните поле 'Адрес'" }
 
 	validates :email, format: { with: /\b[A-Z0-9._%a-z\-]+@(?:[A-Z0-9a-z\-]+\.)+[A-Za-z]{2,4}\z/,
-		massage: "- Email введен неверно." }, 
+		message: "- введен неверно." }, 
 		allow_blank: true
 
 	validates :phone, length: { is: 10,
-		massage: "- Длина телефона должна быть равна 10 цифрам." },
+		message: "- Длина телефона должна быть равна 10 цифрам." },
 		allow_blank: true
 
 	def status_name
