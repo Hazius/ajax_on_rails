@@ -20,6 +20,7 @@ $(document).ready(function() {
 
 $(document).ready(function() {
     $("#bt_make_the_order").click(function () {
-      $("#waiting").css("display", "block");
+        $(this).css("display", "none");
+        $("#waiting").css("display", "block");
     });
 });

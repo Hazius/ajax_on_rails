@@ -24,3 +24,26 @@
 html {
 	padding: 10px;
 }
+
+a {
+	text-decoration: none;
+	&:hover {
+		text-decoration: none;
+	}
+}
+
+#link_root {
+	width: 120px;
+	height: 50px;
+	margin: 10px;
+	font-size: 16px;
+	line-height: 3;	
+	text-align: center;
+	margin: 10px auto 0 auto;
+	background-color: #FFFFCC;
+	color: #787878;
+	&:hover {
+		background-color: #FF9933;
+		color: #FFFFFF;	
+	}	
+}
