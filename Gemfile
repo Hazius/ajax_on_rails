@@ -20,6 +20,7 @@ group :production do
 	gem 'rails_12factor', '0.0.2'
 end
 
+gem 'sidekiq-mailer', '~> 0.1.0'
 gem 'bootstrap-sass', '2.3.2.0'
 gem 'docx_templater'
 gem 'bcrypt-ruby', '3.1.2'

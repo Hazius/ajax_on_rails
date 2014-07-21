@@ -1,6 +1,7 @@
 class OrderMailer < ActionMailer::Base
   	default from: "store"
-
+    extend Sidekiq::Mailer
+    
   	def send_email_for_user(p_order)
   		@order = p_order  		
   		mail(to: p_order.email, subject: "Ваш заказ принят.")
