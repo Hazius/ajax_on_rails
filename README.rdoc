@@ -1,28 +1,17 @@
-== README
+На главной странице меню из 3 пунктов:
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+1. Оформить заказ (AJAX)
+- а) оформление заказа
+- б) валидация формы
+- в) рассылка писем всем менеджерам(с вложением docx с инфой заказа) и заказчику
+- г) информирование об успешности
 
-Things you may want to cover:
+2. Управление заказами
+- а) просмотр всех сделанных заказов
+- б) изменение статуса с новой на закрытую, и обратно
+- в) удаление заказа
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+3. Ведение менеджеров (которым отправляются письма о заказах)
+- а) просмотр
+- б) редактирование
+- в) создание
