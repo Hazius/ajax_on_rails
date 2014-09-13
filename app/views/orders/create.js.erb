@@ -4,27 +4,27 @@
   $("#errors_show").html("");
   $( "#dialog" ).css("display","block");
   $( "#dialog" ).dialog({
-      autoOpen: true,
-      resizable: false,
-      width:400,
-      modal: true,
-      buttons: {        
-        "Закрыть": function() {
-          $( this ).dialog( "close" );
-        }
-      },
-      show: {
-        effect: "explode",
-        duration: 1000
-      },
-      hide: {
-        effect: "explode",
-        duration: 1000
+    autoOpen: true,
+    resizable: false,
+    width:400,
+    modal: true,
+    buttons: {
+      "Закрыть": function() {
+        $( this ).dialog( "close" );
       }
-    });
+    },
+    show: {
+      effect: "explode",
+      duration: 1000
+    },
+    hide: {
+      effect: "explode",
+      duration: 1000
+    }
+  });
 <% end %>
 
 $("#waiting").css("display", "none");
 $("#bt_make_the_order").css("display", "inline");
-    
+
 
